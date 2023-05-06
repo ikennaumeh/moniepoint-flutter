@@ -6,4 +6,6 @@ class Palette {
   static const Color pink = Color(0xffea7099);
   static const Color grey = Color(0xff9d9da2);
   static const Color white = Colors.white;
+  static const Color amber = Colors.amber;
+  static const Color black = Colors.black;
 }
