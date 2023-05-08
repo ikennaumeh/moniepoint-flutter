@@ -20,25 +20,27 @@ class AboutItemRow extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Text(
-                "$title: ",
-                style: TextStyle(
-                  fontSize: 12.sf,
-                  fontWeight: FontWeight.w600,
-                  color: Palette.grey,
+          Expanded(
+            child: Row(
+              children: [
+                Text(
+                  "$title: ",
+                  style: TextStyle(
+                    fontSize: 12.sf,
+                    fontWeight: FontWeight.w600,
+                    color: Palette.grey,
+                  ),
                 ),
-              ),
-              Text(
-                trailing,
-                style: TextStyle(
-                  fontSize: 13.sf,
-                  fontWeight: FontWeight.w600,
-                  color: Palette.textColor,
+                Text(
+                  trailing,
+                  style: TextStyle(
+                    fontSize: 13.sf,
+                    fontWeight: FontWeight.w600,
+                    color: Palette.textColor,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           const SizedBox(
             width: 80,

@@ -212,6 +212,9 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                 AboutViewTab(),
                 ColoredBox(
                   color: Palette.white,
+                  child: Center(
+                    child: Text("Empty"),
+                  ),
                 ),
               ]),
             ),

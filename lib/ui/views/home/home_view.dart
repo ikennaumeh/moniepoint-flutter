@@ -23,8 +23,13 @@ class HomeView extends StatelessWidget {
                       floating: true,
                       expandedHeight: 200,
                       backgroundColor: Palette.white,
+                      elevation: .9,
+                      bottom: const PreferredSize(
+                        preferredSize: Size.fromHeight(75.0), 
+                        child: ColoredBox(color: Palette.white),
+                      ), 
                       flexibleSpace: FlexibleSpaceBar(
-                        background: ListView(
+                        background: PageView(
                           scrollDirection: Axis.horizontal,
                           children: [
                             Image.asset(
@@ -36,6 +41,7 @@ class HomeView extends StatelessWidget {
                           ],
                         ),
                       ),
+                     
                     ),
                     SliverPersistentHeader(
                       pinned: true,
@@ -63,7 +69,7 @@ class HomeView extends StatelessWidget {
                     ),
                   ],
                 ),
-                searchBar
+                  const SearchBar(),
               ],
             ),
           ),
@@ -73,18 +79,22 @@ class HomeView extends StatelessWidget {
 
 
 
-Widget get searchBar {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+class SearchBar extends StatelessWidget  {
+  const SearchBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
     child: SizedBox(
-      height: 48,
+      height: 47.scale,
       child: Row(
         children: [
           Expanded(
             child: TextFormField(
               cursorColor: Palette.grey,
               decoration: const InputDecoration(
-                hintText: "Search",
+                
                 prefixIcon: Icon(
                   Icons.search,
                   color: Palette.grey,
@@ -99,7 +109,7 @@ Widget get searchBar {
             child: Badge(
               backgroundColor: Palette.pink,
               label: Text("1"),
-              child: Icon(Icons.shopping_bag_outlined),
+              child: Icon(Icons.shopping_bag_outlined, color: Palette.black),
             ),
           ),
           const Padding(
@@ -107,13 +117,15 @@ Widget get searchBar {
             child: Badge(
               backgroundColor: Palette.pink,
               label: Text("9+"),
-              child: Icon(Icons.comment_outlined),
+              child: Icon(Icons.comment_outlined, color: Palette.black,),
             ),
           ),
         ],
       ),
     ),
   );
+  }
+  
 }
 
 class ContentsHeader extends SliverPersistentHeaderDelegate {
